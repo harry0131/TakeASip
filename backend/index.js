@@ -18,6 +18,10 @@ mongoose.connect(uri, {
   .then(() => console.log("✅ MongoDB connected successfully"))
   .catch(err => console.log("❌ MongoDB connection error:", err));
 
+  // Import and use routes
+const userRoutes = require('./routes/userRoutes');
+app.use('/user', userRoutes); // All user-related APIs will use this base path
+
 app.get('/', (req, res) => {
   res.send('Hello from TakeASip backend!');
 });
