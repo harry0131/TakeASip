@@ -1,12 +1,16 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose'); // <-- Import Mongoose
+const intakeRoutes = require('./routes/intake');
+
 
 const app = express();
 const PORT = 5000;
 
 app.use(cors());
 app.use(express.json());
+app.use('/intake', intakeRoutes);
+
 
 // MongoDB connection
 const uri = "mongodb+srv://EzakialChristian:takeasipDB@takeasipcluster.er9gtvz.mongodb.net/?retryWrites=true&w=majority&appName=TakeASipCluster";
