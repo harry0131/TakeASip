@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './IntakeForm.css';
 
 function IntakeForm() {
   const [amount, setAmount] = useState('');
@@ -16,7 +17,7 @@ function IntakeForm() {
 
       const data = await response.json();
       if (response.ok) {
-        setMessage('✅ Intake logged!');
+        setMessage('✅ Intake logged! Stay Hydrated.. Keep Healthy.');
         setAmount('');
       } else {
         setMessage('❌ Error: ' + data.message);

@@ -25,6 +25,8 @@ mongoose.connect(uri, {
   // Import and use routes
 const userRoutes = require('./routes/userRoutes');
 app.use('/user', userRoutes); // All user-related APIs will use this base path
+app.use('/intake', intakeRoutes); // All intake-related APIs will use this base path
+
 
 app.get('/', (req, res) => {
   res.send('Hello from TakeASip backend!');

@@ -27,4 +27,16 @@ router.post('/', async (req, res) => {
   }
 });
 
+// GET /intake/:userId - fetch intake logs for a user
+router.get('/:userId', async (req, res) => {
+  const { userId } = req.params;
+  try {
+    const logs = await Intake.find({ userId }).sort({ timestamp: -1 });
+    res.json(logs);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 module.exports = router;
