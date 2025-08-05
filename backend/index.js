@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose'); // <-- Import Mongoose
+const mongoose = require('mongoose'); 
 const intakeRoutes = require('./routes/intake');
 
 
@@ -19,8 +19,8 @@ mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("✅ MongoDB connected successfully"))
-  .catch(err => console.log("❌ MongoDB connection error:", err));
+  .then(() => console.log("MongoDB connected successfully"))
+  .catch(err => console.log("MongoDB connection error:", err));
 
   // Import and use routes
 const userRoutes = require('./routes/userRoutes');

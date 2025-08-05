@@ -6,7 +6,7 @@ function IntakeLog() {
   const [logs, setLogs] = useState([]);
 
   useEffect(() => {
-    // Replace 'guest' with actual userId if you have authentication
+    //  "guest" can be replaced with actual userId if we implement authentication component
     fetch('http://localhost:5000/intake/guest')
       .then(res => res.json())
       .then(data => setLogs(data))

@@ -3,14 +3,14 @@ const router = express.Router();
 const mongoose = require('mongoose');
 
 
-// Define schema
+// Defining DB schema
 const intakeSchema = new mongoose.Schema({
-  userId: { type: String, required: true }, // Optional: hardcode or skip for now
+  userId: { type: String, required: true },
   amount: { type: Number, required: true },
   timestamp: { type: Date, default: Date.now }
 });
 
-// Define model
+// Defineing DB model
 const Intake = mongoose.model('Intake', intakeSchema);
 
 // POST /intake - log water intake
